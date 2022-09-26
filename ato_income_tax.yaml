@@ -1,0 +1,140 @@
+---
+fy_22_23: 
+    financial_year: 2022-2023
+    income_tax_bands:
+        band_1:
+            min_income: 0
+            max_income: 18200
+            tax_rate: 0
+        band_2:
+            min_income: 18201
+            max_income: 45000
+            tax_rate: 0.19
+        band_3:
+            min_income: 45001
+            max_income: 120000
+            tax_rate: 0.325
+        band_4:
+            min_income: 120001
+            max_income: 180000 
+            tax_rate: 0.37
+        band_5:
+            min_income: 180001
+            max_income: 10000000 #There is no max for this band, but 10 million seems far enough
+            tax_rate: 0.45
+    medicare_levy: 
+        band_1:
+            min_income: 0
+            max_income: 22365 #This is for FY21-22, as current FY data doesn't seem to be available
+    medicare_levy_surcharge:
+        single:
+            base_tier:
+                min_income: 0
+                max_income: 90000
+                tax_rate: 0
+            tier_1:
+                min_income: 90001
+                max_income: 105000
+                tax_rate: 0.01
+            tier_2:
+                min_income: 105001
+                max_income: 140000
+                tax_rate: 0.0125
+            tier_3:
+                min_income: 140001
+                max_income: 10000000
+                tax_rate: 0.015
+        family:
+            base_tier:
+                min_income: 0
+                max_income: 180000
+                tax_rate: 0
+            tier_1:
+                min_income: 180001
+                max_income: 210000
+                tax_rate: 0.01
+            tier_2:
+                min_income: 210001
+                max_income: 280000
+                tax_rate: 0.0125
+            tier_3:
+                min_income: 280001
+                max_income: 10000000
+                tax_rate: 0.015
+    HECS:
+        band_1:
+            min_income: 0
+            max_income: 48360
+            tax_rate: 0
+        band_2:
+            min_income: 48361
+            max_income: 55836
+            tax_rate: 0.01
+        band_3:
+            min_income: 55837
+            max_income: 59186
+            tax_rate: 0.02
+        band_4:
+            min_income: 59187
+            max_income: 62738
+            tax_rate: 0.025
+        band_5:
+            min_income: 62739
+            max_income: 66502
+            tax_rate: 0.03
+        band_6:
+            min_income: 66503
+            max_income: 70492
+            tax_rate: 0.035
+        band_7:
+            min_income: 70493
+            max_income: 74722
+            tax_rate: 0.04
+        band_8:
+            min_income: 74723
+            max_income: 79206
+            tax_rate: 0.045
+        band_9:
+            min_income: 79207
+            max_income: 83958
+            tax_rate: 0.05
+        band_10:
+            min_income: 83959
+            max_income: 88996
+            tax_rate: 0.055
+        band_11:
+            min_income: 88997
+            max_income: 94336
+            tax_rate: 0.06
+        band_12:
+            min_income: 94337
+            max_income: 99996
+            tax_rate: 0.065
+        band_13:
+            min_income: 99997
+            max_income: 105996
+            tax_rate: 0.07
+        band_14:
+            min_income: 105997
+            max_income: 112355
+            tax_rate: 0.075
+        band_15:
+            min_income: 112356
+            max_income: 119097
+            tax_rate: 0.08
+        band_16:
+            min_income: 119098
+            max_income: 126243
+            tax_rate: 0.085
+        band_17:
+            min_income: 126244
+            max_income: 133818
+            tax_rate: 0.09
+        band_18:
+            min_income: 133819
+            max_income: 141847
+            tax_rate: 0.095
+        band_19:
+            min_income: 141848
+            max_income: 10000000
+            tax_rate: 0.1
