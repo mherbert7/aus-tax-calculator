@@ -26,6 +26,11 @@ fy_22_23:
         band_1:
             min_income: 0
             max_income: 22365 #This is for FY21-22, as current FY data doesn't seem to be available
+            tax_rate: 0
+        band_2:
+            min_income: 22366
+            max_income: 10000000
+            tax_rate: 0.02
     medicare_levy_surcharge:
         single:
             base_tier:
