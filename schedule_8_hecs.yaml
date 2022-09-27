@@ -1,0 +1,177 @@
+---
+# =============================================================================
+# All the following data is pulled from Schedule 8 Pay as you go (PAYG) 
+# withholding. Document number NAT 3539. 
+# Statement of formulas for calculating study and training support loans 
+# components
+# Document with date or rev: NAT 3539-05.2022
+# PDF: https://www.ato.gov.au/uploadedFiles/Content/MEI/downloads/Statement-of-formulas-study-and-training-support-loans-2022-23.pdf
+# Webpage: https://www.ato.gov.au/Rates/Schedule-8---Statement-of-formulas-for-calculating-study-and-training-support-loans-components/
+# =============================================================================
+financial_year_2022_2023:
+    document: NAT3539_05_2022
+    financial_year: 2022-2023
+    same_as_other_financial_year: False
+    financial_year_for_comparison: NA
+    scale_1:
+        tfn_provided: True
+        resident_tax_status: resident or foreign
+        tax_free_threshold: claimed
+        weekly_earnings_thresholds:
+            band_1:
+                min_earnings: 0
+                max_earnings: 929.99
+                a: 0
+            band_2:
+                min_earnings: 930
+                max_earnings: 1072.99
+                a: 0.01
+            band_3:
+                min_earnings: 1073
+                max_earnings: 1137.99
+                a: 0.02
+            band_4:
+                min_earnings: 1138
+                max_earnings: 1205.99
+                a: 0.025
+            band_5:
+                min_earnings: 1206
+                max_earnings: 1277.99
+                a: 0.03
+            band_6:
+                min_earnings: 1278
+                max_earnings: 1354.99
+                a: 0.035
+            band_7:
+                min_earnings: 1355
+                max_earnings: 1435.99
+                a: 0.04
+            band_8:
+                min_earnings: 1436
+                max_earnings: 1522.99
+                a: 0.045
+            band_9:
+                min_earnings: 1523
+                max_earnings: 1613.99
+                a: 0.05
+            band_10:
+                min_earnings: 1614
+                max_earnings: 1710.99
+                a: 0.055
+            band_11:
+                min_earnings: 1711
+                max_earnings: 1813.99
+                a: 0.06
+            band_12:
+                min_earnings: 1814
+                max_earnings: 1922.99
+                a: 0.065
+            band_13:
+                min_earnings: 1923
+                max_earnings: 2037.99
+                a: 0.07
+            band_14:
+                min_earnings: 2038
+                max_earnings: 2159.99
+                a: 0.075
+            band_15:
+                min_earnings: 2160
+                max_earnings: 2289.99
+                a: 0.08
+            band_16:
+                min_earnings: 2290
+                max_earnings: 2426.99
+                a: 0.085
+            band_17:
+                min_earnings: 2427
+                max_earnings: 2572.99
+                a: 0.09
+            band_18:
+                min_earnings: 2573
+                max_earnings: 2726.99
+                a: 0.095
+            band_19:
+                min_earnings: 2727
+                max_earnings: 1000000
+                a: 0.1
+        scale_2:
+            tfn_provided: True
+            resident_tax_status: resident or foreign
+            tax_free_threshold: not claimed
+            weekly_earnings_thresholds:
+                band_1:
+                    min_earnings: 0
+                    max_earnings: 579.99
+                    a: 0
+                band_2:
+                    min_earnings: 580
+                    max_earnings: 722.99
+                    a: 0.01
+                band_3:
+                    min_earnings: 723
+                    max_earnings: 787.99
+                    a: 0.02
+                band_4:
+                    min_earnings: 788
+                    max_earnings: 855.99
+                    a: 0.025
+                band_5:
+                    min_earnings: 856
+                    max_earnings: 927.99
+                    a: 0.03
+                band_6:
+                    min_earnings: 928
+                    max_earnings: 1004.99
+                    a: 0.035
+                band_7:
+                    min_earnings: 1005
+                    max_earnings: 1085.99
+                    a: 0.04
+                band_8:
+                    min_earnings: 1086
+                    max_earnings: 1172.99
+                    a: 0.045
+                band_9:
+                    min_earnings: 1173
+                    max_earnings: 1263.99
+                    a: 0.05
+                band_10:
+                    min_earnings: 1264
+                    max_earnings: 1360.99
+                    a: 0.055
+                band_11:
+                    min_earnings: 1361
+                    max_earnings: 1463.99
+                    a: 0.06
+                band_12:
+                    min_earnings: 1464
+                    max_earnings: 1572.99
+                    a: 0.065
+                band_13:
+                    min_earnings: 1573
+                    max_earnings: 1687.99
+                    a: 0.07
+                band_14:
+                    min_earnings: 1688
+                    max_earnings: 1809.99
+                    a: 0.075
+                band_15:
+                    min_earnings: 1810
+                    max_earnings: 1939.99
+                    a: 0.08
+                band_16:
+                    min_earnings: 1940
+                    max_earnings: 2076.99
+                    a: 0.085
+                band_17:
+                    min_earnings: 2077
+                    max_earnings: 2222.99
+                    a: 0.09
+                band_18:
+                    min_earnings: 2223
+                    max_earnings: 2376.99
+                    a: 0.095
+                band_19:
+                    min_earnings: 2377
+                    max_earnings: 1000000
+                    a: 0.1

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Sep 26 14:55:05 2022
+Created on Tue Sep 27 19:40:24 2022
 
 @author: Marcus
 """
@@ -14,4 +14,7 @@ file = open(filename, "r")
 
 file_read = yaml.safe_load(file)
 
-print(file_read)
+#print(file_read)
+
+earnings = file_read["financial_year_2022_2023"]["scale_1"]["weekly_earnings_thresholds"]
+print(earnings)

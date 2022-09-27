@@ -11,9 +11,9 @@ import math
 scale_to_fortnight = 26
 
 name = "Fred"
-income = 1000*52
+income = 2000*26
 private_health = True
-hecs = True
+hecs = False
 
 ato_file_path = "ato_income_tax.yaml"
 
