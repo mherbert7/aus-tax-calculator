@@ -196,9 +196,9 @@ class ato:
         
         
     def calculate_weekly_earnings(self, 
-                           income, 
-                           current_period, 
-                           allowances=0):
+                                  income, 
+                                  current_period, 
+                                  allowances=0):
         """
         Convert the income from one period to weekly.
 
@@ -207,9 +207,6 @@ class ato:
         income : float
             The current income.
         current_period : str
-            Valid options are "annual", "quarterly", "monthly", "fortnightly"
-            and "weekly".
-        new_period : str
             Valid options are "annual", "quarterly", "monthly", "fortnightly"
             and "weekly".
         allowances : float
@@ -239,14 +236,54 @@ class ato:
             temp = (temp * 3) / 13
             
         elif(current_period == "fortnightly"):
-            temp = income / 26
+            temp = (income + allowances) / 2
             
         elif(current_period == "weekly"):
-            temp = income
+            temp = income + allowances
             
         earnings = self.ignore_cents_add_99(temp)
         
         return earnings
+    
+    
+    def scale_weekly_tax_withheld_to_period(self, tax_withheld, new_period):
+        """
+        Convert the tax withheld from weekly to another period.
+
+        Parameters
+        ----------
+        tax_withheld : float
+            The tax to be withheld.
+        new_period : str
+            Valid options are "annual", "quarterly", "monthly", "fortnightly"
+            and "weekly".
+
+        Returns
+        -------
+        float
+            Tax withheld, in the new period
+        """
+        final_withholding = 0
+        temp = 0
+        
+        if(new_period == "annual"):
+            temp = tax_withheld * 52 
+            
+        elif(new_period == "quarterly"):
+            temp = tax_withheld * 13
+            
+        elif(new_period == "monthly"):
+            temp = round((tax_withheld * 13) / 3)
+            
+        elif(new_period == "fortnightly"):
+            temp = tax_withheld * 2
+            
+        elif(new_period == "weekly"):
+            temp = tax_withheld
+            
+        final_withholding = temp
+        
+        return final_withholding
             
             
     def calculate_tax_withheld(self, financial_year, the_individual):
@@ -267,7 +304,6 @@ class ato:
         float
             Tax to be withheld, on a weekly basis.
         """
-        fy = financial_year
         client = the_individual
         
         tax = 0
@@ -278,7 +314,9 @@ class ato:
                     if(client.income_mask == item.scales[scale].mask):
                         sc = item.scales[scale]
                         earnings = sc.weekly_earnings_thresholds
-                        weekly_income = int(client.get_salary()/52) + 0.99
+                        weekly_income = self.calculate_weekly_earnings(
+                                                        client.get_income(),
+                                                        client.income_period)
                         thresholds = (i for i in earnings if weekly_income < i)
                         threshold = min(thresholds)
                         a = earnings[threshold].a
@@ -286,9 +324,10 @@ class ato:
                         tax = round(a * weekly_income - b)
                         break
                     
-        print("The tax is:", tax, "weekly")
-        print("The tax is:", tax*2, "fortnightly")
-        print("The tax is:", tax*52, "over 52 weeks")
+        tax = self.scale_weekly_tax_withheld_to_period(tax, 
+                                                       client.income_period)
+        
+        return tax
         
     
     def search_for_income_band(self, tax_data, taxable_income):
@@ -463,7 +502,8 @@ class individual:
     
     def __init__(self,
                  name,
-                 annual_salary, 
+                 income,
+                 income_period,
                  has_private_health, 
                  has_hecs,
                  tfn_provided,
@@ -478,9 +518,12 @@ class individual:
         ----------
         name : str
             The name of the individual.
-        annual_salary : float
-            Annual salary in AUD. I made it float to allow for a salary that 
+        income : float
+            Income in AUD. I made it float to allow for an income that 
             specifies cents.
+        income_period : str
+            The income period: "annual", "quarterly", "monthly", "fortnightly",
+            or "weekly".
         has_private_health : bool
             If the individual has private health insurance for the entire 
             financial year, then this is true. If not, then false.
@@ -490,7 +533,8 @@ class individual:
         """
         self.name = name
         
-        self._salary = annual_salary
+        self._income = income
+        self.income_period = income_period
         self._has_private_health = has_private_health
         self._has_hecs = has_hecs
         
@@ -516,28 +560,28 @@ class individual:
                             self.half_medicare_levy_exemption]
         
         
-    def get_salary(self):
+    def get_income(self):
         """
-        A function to return the individual's salary.
+        A function to return the individual's income.
 
         Returns
         -------
         float
-            The individual's salary.
+            The individual's income.
         """
-        return self._salary
+        return self._income
     
     
-    def set_salary(self, salary):
+    def set_income(self, income):
         """
-        Sets the individual's new salary.
+        Sets the individual's new income.
 
         Parameters
         ----------
-        salary : float
-            The individual's new salary.
+        income : float
+            The individual's new income.
         """
-        self._salary = salary
+        self._income = income
         
         
     def get_has_private_health(self):
