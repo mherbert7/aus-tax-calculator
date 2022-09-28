@@ -1,0 +1,175 @@
+---
+# =============================================================================
+# All the following data is pulled from Schedule 1 Pay as you go (PAYG) 
+# withholding. Document number NAT 1004. 
+# Statement of formulas for calculating amounts to be withheld
+# Document with date or rev: NAT 1004-10.2020
+# PDF: https://www.ato.gov.au/uploadedFiles/Content/MEI/downloads/calculating-amounts-to-be-withheld-from-13-October-2020.pdf
+# Webpage: https://www.ato.gov.au/Rates/Schedule-1---Statement-of-formulas-for-calculating-amounts-to-be-withheld/
+# =============================================================================
+financial_year_2022_2023:
+    document: NAT1004_10_2020
+    financial_year: 2022-2023
+    same_as_other_financial_year: False
+    financial_year_for_comparison: NA
+    scales:
+        scale_1:
+            tfn_provided: True
+            resident_tax_status: resident
+            tax_free_threshold: not claimed
+            full_medicare_levy_exemption: not claimed
+            half_medicare_levy_exemption: not claimed
+            weekly_earnings_less_than_thresholds:
+                88: 
+                    a: 0.19
+                    b: 0.19            
+                371:
+                    a: 0.2348
+                    b: 3.9639
+                515:
+                    a: 0.219
+                    b: -1.9003
+                932:
+                    a: 0.3477
+                    b: 64.4297
+                1957:
+                    a: 0.345
+                    b: 61.9132
+                3111:
+                    a: 0.39
+                    b: 150.0093
+                1000000: #There is no maximum, but 1,000,000 is far enough
+                    a: 0.47
+                    b: 398.9324
+        scale_2:
+            tfn_provided: True
+            resident_tax_status: resident
+            tax_free_threshold: claimed
+            full_medicare_levy_exemption: not claimed
+            half_medicare_levy_exemption: not claimed
+            weekly_earnings_less_than_thresholds:
+                359:
+                    a: 0
+                    b: 0
+                438:
+                    a: 0.19
+                    b: 68.3462
+                548:
+                    a: 0.29
+                    b: 112.1942
+                721:
+                    a: 0.21
+                    b: 68.3465
+                865:
+                    a: 0.219
+                    b: 74.8369
+                1282:
+                    a: 0.3477
+                    b: 186.2119
+                2307:
+                    a: 0.345
+                    b: 182.7504
+                3461:
+                    a: 0.39
+                    b: 286.5965
+                1000000:
+                    a: 0.47
+                    b: 563.5196
+        scale_3:
+            tfn_provided: True
+            resident_tax_status: foreign
+            tax_free_threshold: NA
+            full_medicare_levy_exemption: NA
+            half_medicare_levy_exemption: NA
+            weekly_earnings_less_than_thresholds:
+                2307:
+                    a: 0.325
+                    b: 0.325
+                3461:
+                    a: 0.37
+                    b: 103.8462
+                1000000:
+                    a: 0.45
+                    b: 380.7692
+        scale_4_1:
+            tfn_provided: False
+            resident_tax_status: resident
+            tax_free_threshold: NA
+            full_medicare_levy_exemption: NA
+            half_medicare_levy_exemption: NA
+            weekly_earnings_less_than_thresholds:
+                1000000: 
+                    a: 0.47
+                    b: 0
+        scale_4_2:
+            tfn_provided: False
+            resident_tax_status: resident
+            tax_free_threshold: NA
+            full_medicare_levy_exemption: NA
+            half_medicare_levy_exemption: NA
+            weekly_earnings_less_than_thresholds:
+                1000000: 
+                    a: 0.45
+                    b: 0
+        scale_5:
+            tfn_provided: True
+            resident_tax_status: resident
+            tax_free_threshold: True
+            full_medicare_levy_exemption: claimed
+            half_medicare_levy_exemption: not claimed
+            weekly_earnings_less_than_thresholds:
+                359:
+                    a: 0
+                    b: 0
+                721:
+                    a: 0.19
+                    b: 68.3462
+                865:
+                    a: 0.199
+                    b: 74.8365
+                1282:
+                    a: 0.3277
+                    b: 186.2115
+                2307:
+                    a: 0.325
+                    b: 182.75
+                3461:
+                    a: 0.37
+                    b: 286.5962
+                1000000:
+                    a: 0.45
+                    b: 563.5192
+        scale_6:
+            tfn_provided: True
+            resident_tax_status: resident
+            tax_free_threshold: True
+            full_medicare_levy_exemption: not claimed
+            half_medicare_levy_exemption: claimed
+            weekly_earnings_less_than_thresholds:
+                359:
+                    a: 0
+                    b: 0
+                721:
+                    a: 0.19
+                    b: 68.3462
+                739:
+                    a: 0.199
+                    b: 74.8365
+                865:
+                    a: 0.249
+                    b: 111.8308
+                924:
+                    a: 0.3777
+                    b: 233.2058
+                1282:
+                    a: 0.3377
+                    b: 186.2119
+                2307:
+                    a: 0.335
+                    b: 182.7504
+                3461:
+                    a: 0.38
+                    b: 286.5965
+                1000000:
+                    a: 0.46
+                    b: 563.5196
